@@ -18,19 +18,15 @@ Um passo a passo de como baixar o projeto.
 
 Esse projeto é baseado em React, gerido pelo VITE. Para executar-lo, siga esses passos.
 
-1.  Navegue até a pasta do VITE:
-    ```bash
-    cd Challenge-2k25
-    ````
-2.  Instale as dependencias:
+1.  Instale as dependencias:
     ```bash
     npm install
     ````
-3.  Execute o projeto:
+2.  Execute o projeto:
     ```bash
     npm run dev
     ```
-4.  Caso deseje interromper a execução:
+*  Caso deseje interromper a execução:
     ```bash
     q + enter
     ````
