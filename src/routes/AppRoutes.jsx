@@ -1,8 +1,23 @@
-//import dos elementos que usaremos para as configuração das rotas
-import {createBrowserRouter} from 'react-router-dom'
-/*variável que irá guardar todas as rotas que iremos criar dentro do 
-método createBrowserRouter()*/
-export const router = createBrowserRouter([
-    {},
-    {},
-])
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AdminLayout from "../pages/adminlayout.jsx";
+import Feed from "../pages/feed.jsx";
+import Promocoes from "../pages/promocoes.jsx";
+import Explorar from "../pages/explorar.jsx";
+import Perfil from "../pages/perfil.jsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AdminLayout />,
+    children: [
+      { path: "feed", element: <Feed /> },
+      { path: "promocoes", element: <Promocoes /> },
+      { path: "explorar", element: <Explorar /> },
+      { path: "perfil", element: <Perfil /> },
+    ],
+  },
+]);
+
+export default function AppRoutes() {
+  return <RouterProvider router={router} />;
+}
