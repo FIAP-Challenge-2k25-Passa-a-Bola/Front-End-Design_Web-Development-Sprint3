@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-
+import Sidebarleft from "../components/Sidebar.jsx";
 export default function AdminLayout() {
   return (
     <div className="bg-black min-h-screen text-white">
@@ -14,8 +14,9 @@ export default function AdminLayout() {
           </div>
         </div>
       </nav>
-      <main className="p-4">
+      <main className="p-4 ml-64">
         <Outlet />
+        <Sidebarleft />
       </main>
     </div>
   );

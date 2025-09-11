@@ -10,6 +10,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <AdminLayout />,
     children: [
+      { index: true, element: <Feed /> },
       { path: "feed", element: <Feed /> },
       { path: "promocoes", element: <Promocoes /> },
       { path: "explorar", element: <Explorar /> },
