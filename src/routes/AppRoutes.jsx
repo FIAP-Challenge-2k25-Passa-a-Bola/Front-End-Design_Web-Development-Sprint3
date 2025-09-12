@@ -7,15 +7,12 @@ import Perfil from "../pages/perfil.jsx";
 import Home from "../pages/home.jsx";
 
 const router = createBrowserRouter([
-
-  { path: "/home", element: <Home /> },
-
-
   {
     path: "/",
     element: <AdminLayout />,
     children: [
-      { index: true, element: <Feed /> },
+      { index: true, element: <Home /> },
+      { path: "home", element: <Home /> },
       { path: "feed", element: <Feed /> },
       { path: "promocoes", element: <Promocoes /> },
       { path: "explorar", element: <Explorar /> },
