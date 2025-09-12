@@ -1,23 +1,42 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
 
   const item = "block py-2 px-3 rounded md:p-0";
-  const idle ="font-poppins text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-black transition-colors duration-300 dark:text-white";
-  const active = "text-white md:hover:text-black transition-colors duration-300";
+  const idle =
+    "font-poppins text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-black transition-colors duration-300 dark:text-white";
+  const active =
+    "text-white md:hover:text-black transition-colors duration-300";
+
+  const imagens = [
+    "/images/img-home.png",
+    "/images/img2-home.png",
+    "/images/img3-home.png",
+  ];
+
+  const [indice, setIndice] = useState(0);
+
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      setIndice((i) => (i + 1) % imagens.length);
+    }, 4000);
+    return () => clearInterval(intervalo);
+  }, [imagens.length]);
+
+  const mudar = (i) => setIndice((i + imagens.length) % imagens.length);
 
   return (
     <div className="min-h-screen bg-white text-white">
-
-      {/* HEADER EM BRANCO */}
-      <div className="w-full h-8 bg-white flex justify-center">
-        <img src="./images/fiap-logo.png" alt="logo FIAP" className="h-8"/>
-        <img src="./images/kto-logo.png" alt="logo KTO" className="h-8"/>
-        <img src="./images/adidas-logo.png" alt="logo Adidas" className="h-8"/>
+      {/* Header superior com logos */}
+      <div className="w-full h-8 bg-white flex justify-center gap-4">
+        <img src="/images/fiap-logo.png" alt="logo FIAP" className="h-8" />
+        <img src="/images/kto-logo.png" alt="logo KTO" className="h-8" />
+        <img src="/images/adidas-logo.png" alt="logo Adidas" className="h-8" />
       </div>
-      {/* NAVBAR */}
+
+      {/* Navbar */}
       <nav className="bg-[#e58fb7] border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-3">
           <Link to="/home">
@@ -57,7 +76,7 @@ export default function Home() {
             id="menu"
             className={`${open ? "block" : "hidden"} w-full md:block md:w-auto`}
           >
-            <ul className="text-xs flex flex-col mt-4 gap-4 md:flex-row md:items-center md:gap-6 md:mt-0">
+            <ul className="font-poppins text-xs flex flex-col mt-4 gap-4 md:flex-row md:items-center md:gap-6 md:mt-0">
               <li>
                 <NavLink
                   to="/home"
@@ -113,8 +132,51 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Conteúdo abaixo */}
-      <section className="max-w-screen-xl mx-auto p-6"></section>
+      {/* Carrossel */}
+      <div className="relative w-screen h-[350px] overflow-hidden mt-8">
+        {imagens.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={`slide-${i}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+              i === indice ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+
+        {/* Botões de controle */}
+        <button
+          onClick={() => mudar(indice - 1)}
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/30 text-white p-2 rounded-full"
+        >
+          ‹
+        </button>
+        <button
+          onClick={() => mudar(indice + 1)}
+          className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/30 text-white p-2 rounded-full"
+        >
+          ›
+        </button>
+
+        {/* Indicadores */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          {imagens.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setIndice(i)}
+              className={`w-3 h-3 rounded-full ${
+                i === indice ? "bg-white" : "bg-white/50"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Conteúdo debaixo */}
+      <section className="max-w-screen-xl mx-auto p-6">
+        {/* Conteúdo é apartir daqui */}
+      </section>
     </div>
   );
 }
