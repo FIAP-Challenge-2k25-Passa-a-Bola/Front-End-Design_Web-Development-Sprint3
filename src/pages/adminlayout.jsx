@@ -16,7 +16,6 @@ export default function AdminLayout() {
       </nav>
       <main className="p-4 ml-64">
         <Outlet />
-        <Sidebarleft />
       </main>
     </div>
   );
