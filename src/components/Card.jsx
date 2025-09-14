@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Sidebarleft from "./Sidebar.jsx";
 import Conta from "./Conta.jsx";
 
+
 export default function Card() {
   const [postText, setPostText] = useState("");
   const [posts, setPosts] = useState([]);
@@ -67,6 +68,8 @@ export default function Card() {
       <div className="space-y-6 md:ml-40 p-2">
         <div className="bg-[#b51890ff] p-4 rounded-2xl shadow">
           <h2 className="text-xl font-bold mb-3 text-white ">Criar post</h2>
+
+
 
           <textarea
             value={postText}
