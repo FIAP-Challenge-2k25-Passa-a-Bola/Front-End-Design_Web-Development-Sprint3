@@ -4,13 +4,15 @@ import Feed from "../pages/feed.jsx";
 import Promocoes from "../pages/promocoes.jsx";
 import Explorar from "../pages/explorar.jsx";
 import Perfil from "../pages/perfil.jsx";
+import Home from "../pages/home.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AdminLayout />,
     children: [
-      { index: true, element: <Feed /> },
+      { index: true, element: <Home /> },
+      { path: "home", element: <Home /> },
       { path: "feed", element: <Feed /> },
       { path: "promocoes", element: <Promocoes /> },
       { path: "explorar", element: <Explorar /> },
