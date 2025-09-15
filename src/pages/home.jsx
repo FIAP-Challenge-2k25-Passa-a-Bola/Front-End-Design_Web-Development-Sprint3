@@ -71,15 +71,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-
-      
-  
-      <section className="max-w-screen-xl mx-auto p-36">
-        {/* Pra jogar o footer la pra baixo */}
-      </section>
-
-      <Footer />
-
     </div>
 
   );

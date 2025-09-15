@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import AdminLayout from "../pages/adminlayout.jsx";
+import UserLayout from "../pages/userlayout.jsx";
 import Feed from "../pages/feed.jsx";
 import SobreNos from "../pages/sobrenos.jsx";
 import Explorar from "../pages/explorar.jsx";
@@ -9,7 +9,7 @@ import Home from "../pages/home.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AdminLayout />,
+    element: <UserLayout />,
     children: [
       { index: true, element: <Home /> },
       { path: "home", element: <Home /> },
