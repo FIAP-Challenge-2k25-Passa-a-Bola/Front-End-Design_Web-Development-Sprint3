@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AdminLayout from "../pages/adminlayout.jsx";
 import Feed from "../pages/feed.jsx";
-import Promocoes from "../pages/sobrenos.jsx";
+import SobreNos from "../pages/sobrenos.jsx";
 import Explorar from "../pages/explorar.jsx";
 import Perfil from "../pages/perfil.jsx";
 import Home from "../pages/home.jsx";

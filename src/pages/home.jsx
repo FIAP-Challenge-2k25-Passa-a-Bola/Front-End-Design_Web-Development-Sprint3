@@ -32,7 +32,7 @@ export default function Home() {
     <div className="min-h-screen bg-white text-black">
 
       {/* Carrossel */}
-      <div className="relative w-full max-w-screen-xl mx-auto h-[350px] overflow-hidden mt-6">
+      <div className="relative w-full max-w-screen-xl mx-auto h-[350px] mt-6">
         {imagens.map((src, i) => (
           <img
             key={i}
@@ -72,14 +72,13 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Conteúdo debaixo */}
-      <section className="max-w-screen-xl mx-auto p-6">
-        {/* Conteúdo é apartir daqui */}
+      
+  
+      <section className="max-w-screen-xl mx-auto p-36">
+        {/* Pra jogar o footer la pra baixo */}
       </section>
 
-      <Footer>
-        
-      </Footer>
+      <Footer />
 
     </div>
 

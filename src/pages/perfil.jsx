@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Footer from "../components/Footer.jsx";
 
 export default function Perfil() {
   const [userdata, setUserdata] = useState({ username: "", email: "", senha: "" });
@@ -98,6 +99,8 @@ export default function Perfil() {
           <span className="font-semibold">Região para jogar:</span> {savedRegiao}
         </p>
       )}
+
     </div>
+    
   );
 }
