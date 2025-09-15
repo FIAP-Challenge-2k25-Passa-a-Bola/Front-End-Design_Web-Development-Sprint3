@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AdminLayout from "../pages/adminlayout.jsx";
 import Feed from "../pages/feed.jsx";
-import Promocoes from "../pages/promocoes.jsx";
+import Promocoes from "../pages/sobrenos.jsx";
 import Explorar from "../pages/explorar.jsx";
 import Perfil from "../pages/perfil.jsx";
 import Home from "../pages/home.jsx";
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "home", element: <Home /> },
       { path: "feed", element: <Feed /> },
-      { path: "promocoes", element: <Promocoes /> },
+      { path: "sobrenos", element: <SobreNos /> },
       { path: "explorar", element: <Explorar /> },
       { path: "perfil", element: <Perfil /> },
     ],

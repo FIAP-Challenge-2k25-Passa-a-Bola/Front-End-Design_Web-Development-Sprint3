@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer.jsx";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -75,6 +76,12 @@ export default function Home() {
       <section className="max-w-screen-xl mx-auto p-6">
         {/* Conteúdo é apartir daqui */}
       </section>
+
+      <Footer>
+        
+      </Footer>
+
     </div>
+
   );
 }
