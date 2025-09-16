@@ -64,7 +64,6 @@ export default function Card() {
       />
 
       <Conta
-      className="hidden lg:block border rounded-lg w-64 fixed top-32 right-0 border-radius 100px overflow-y-auto"
        />
 
       <div className="space-y-6 p-2">
