@@ -57,15 +57,16 @@ export default function Card() {
     allPosts.filter((p) => p.category === "Jogo Passando!") || [];
 
   return (
-    <div className="grid-cols-3 md:col-span-3 space-y-6">
+    <div className=" md:col-span-2 md:col-start-2 space-y-6">
       <Sidebarleft
         jogosPosts={jogosPassandoPosts}
-        className="hidden xl:block border rounded-lg w-64 fixed top-32 left-0 border-radius 100px overflow-y-auto"
+        className="hidden xl:block border rounded-lg w-64 fixed top-32 left-0 border-radius 100px overflow-y-auto md:col-start-1"
       />
+
       <Conta
        />
 
-      <div className="space-y-6 md:ml-40 p-2">
+      <div className="space-y-6 p-2">
         <div className="bg-[#b51890ff] p-4 rounded-2xl shadow">
           <h2 className="text-xl font-bold mb-3 text-white ">Criar post</h2>
 
