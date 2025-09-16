@@ -10,7 +10,7 @@ export default function Conta() {
         alert("Dados salvos com sucesso!");
     }
   return (
-    <div className="flex flex-col rounded-lg items-center fixed top-32 right-0 p-4 bg-[#e58fb7] text-white w-96 z-50">
+    <div className=" flex flex-col rounded-lg items-center fixed top-32 right-0 p-4 bg-[#e58fb7] text-white w-96 z-50">
         <h1 className="text-4xl font-bold mb-8 text-pink-800">Minha Conta</h1>
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
             <div className="mb-4">
