@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Footer from "../components/Footer.jsx";
 
 export default function Perfil() {
   const [userdata, setUserdata] = useState({ username: "", email: "", senha: "" });
@@ -17,12 +16,14 @@ export default function Perfil() {
     const t = localStorage.getItem("time");
     const r = localStorage.getItem("regiao");
     const fotoData = localStorage.getItem("foto");
+    const videoData = localStorage.getItem("video");
 
     if (fotoData) setFoto(fotoData);
     if (savedUserdata) setUserdata(JSON.parse(savedUserdata));
     if (pref) setSavedPreferencia(pref);
     if (t) setSavedTime(t);
     if (r) setSavedRegiao(r);
+    if (videoData) setVideo(videoData);
   }, []);
 
   const handlePost = () => {
@@ -49,10 +50,23 @@ export default function Perfil() {
     }
   };
 
+  const handleVideoChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setVideo(reader.result);
+        localStorage.setItem("video", reader.result);
+      };
+      reader.readAsDataURL(file);
+      alert(`Arquivo ${file.name} selecionado para upload! (Funcionalidade de upload não implementada)`);
+    }
+  };
+
   if (!userdata.username) {
     return (
       <p className="text-center mt-10 text-gray-500">
-        Nenhum dado de usuário encontrado. Por favor, configure sua conta.
+        Nenhum dado de usuário encontrado. Por favor, configure sua conta no feed.
       </p>
     );
   }
@@ -72,15 +86,15 @@ export default function Perfil() {
       <p className="text-gray-700"> 
         <span className="font-semibold">Senha:</span> {"*".repeat(userdata.senha.length)}
       </p>
-      <label htmlFor="fileInput" className="bg-pink-100 text-black px-4 py-2 rounded-lg hover:bg-pink-300 cursor-pointer gap-2 mt-4 inline-block">
-        Adicionar Foto/Vídeo
+      <label htmlFor="fileInput" className="bg-pink-50 text-black px-4 py-2 rounded-lg hover:bg-pink-300 cursor-pointer gap-2 mt-4 inline-block ">
+        Adicionar Foto de perfil
       </label>
       <input type="file" id="fileInput" className="hidden" onChange={handleFotoChange} />
       <input className="w-full p-2 border border-gray-300 rounded-lg text-pink-900 gap-2 mt-4 inline-block" value={userPreferencia} onChange={(e) => setUserPreferencia(e.target.value)} type="text" id="preferencias" placeholder="Suas preferências de jogos (ex: meio campo)"/>
       <input className="w-full p-2 border border-gray-300 rounded-lg text-pink-900 gap-2 mt-4 inline-block" value={userTime} onChange={(e) => setUserTime(e.target.value)} type="text" id="time" placeholder="Seu time do coração"/>
       <input className="w-full p-2 border border-gray-300 rounded-lg text-pink-900 gap-2 mt-4 inline-block" value={userRegiao} onChange={(e) => setUserRegiao(e.target.value)} type="text" id="regiao" placeholder="Região melhor para jogar"/>
 
-      <button onClick={handlePost} className="bg-pink-100 text-black px-4 py-2 rounded-lg hover:bg-pink-300 gap-2 mt-4 inline-block">
+      <button onClick={handlePost} className="bg-pink-50 text-black px-4 py-2 rounded-lg hover:bg-pink-300 gap-2 mt-4 inline-block">
         Salvar Preferências
       </button>
 

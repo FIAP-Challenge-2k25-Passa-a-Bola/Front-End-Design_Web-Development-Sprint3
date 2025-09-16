@@ -20,7 +20,7 @@ export default function Card() {
     {
       text: "Alguém pra marcar um jogo no sábado?",
       category: "Quero companhia!",
-      media: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2U6IlU_7Z9QXLAlzqTn--VBLtEqvTZR--YA&s",
+      media: "https://img.freepik.com/fotos-gratis/mulher-jogando-bola-para-cima_23-2148634558.jpg",
       location: "Região da Vila Matilde",
     },
     {
