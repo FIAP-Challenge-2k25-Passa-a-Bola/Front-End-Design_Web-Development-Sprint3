@@ -5,7 +5,7 @@ export default function Footer() {
             
       <div className="max-w-screen-xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 ">
         
-        {/* Coluna 1 - Logo + descrição */}
+        {/* Coluna 1 - Logo e descrição */}
         <div>
           <a href="./home"><img
             src="/images/logo-sem-fundo.png"
@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Linha inferior */}
+      {/* Todos os direitos reservados */}
       <div className="border-t border-white text-center py-4 text-sm text-white hover:text-pink-200 cursor-pointer">
         © {new Date().getFullYear()} Passa a Bola. Todos os direitos reservados.
       </div>

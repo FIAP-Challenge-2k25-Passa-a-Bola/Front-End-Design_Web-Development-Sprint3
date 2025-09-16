@@ -43,7 +43,7 @@ export default function Home() {
             <button
               key={i}
               onClick={() => setIndice(i)}
-              className={`w-3 h-3 rounded-full ${
+              className={`w-5 h-5 rounded-full ${
                 i === indice ? "bg-white" : "bg-white/50"
               }`}
             />
