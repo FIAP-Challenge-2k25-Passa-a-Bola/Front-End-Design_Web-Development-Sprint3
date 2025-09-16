@@ -10,7 +10,7 @@ export default function Conta() {
         alert("Dados salvos com sucesso!");
     }
   return (
-    <div className="flex flex-col rounded-lg items-center fixed top-32 right-0 p-4 bg-[#e58fb7] text-white w-96 z-50">
+    <main className="fixed right-0  p-4 bg-[#e58fb7] text-white w-70 max-w-md rounded-lg z-50 flex-col overflow-hidden hidden xl:block">
         <h1 className="text-4xl font-bold mb-8 text-pink-800">Minha Conta</h1>
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
             <div className="mb-4">
@@ -28,6 +28,6 @@ Seu email" />
             </div>
             <button onClick={handleSave} className="w-full bg-pink-500 text-white p-2 rounded-lg hover:bg-pink-600 transition duration-300">Salvar Alterações</button>
         </div>
-    </div>
+    </main>
   );
 }

@@ -20,7 +20,7 @@ export default function Card() {
     {
       text: "Alguém pra marcar um jogo no sábado?",
       category: "Quero companhia!",
-      media: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2U6IlU_7Z9QXLAlzqTn--VBLtEqvTZR--YA&s",
+      media: "https://img.freepik.com/fotos-gratis/mulher-jogando-bola-para-cima_23-2148634558.jpg",
       location: "Região da Vila Matilde",
     },
     {
@@ -57,15 +57,17 @@ export default function Card() {
     allPosts.filter((p) => p.category === "Jogo Passando!") || [];
 
   return (
-    <div className="grid-cols-3 md:col-span-3 space-y-6">
+    <div className=" md:col-span-2 md:col-start-2 space-y-6">
       <Sidebarleft
         jogosPosts={jogosPassandoPosts}
-        className="hidden xl:block border rounded-lg w-64 fixed top-32 left-0 border-radius 100px overflow-y-auto"
+        className="hidden xl:block border rounded-lg w-64 fixed top-32 left-0 border-radius 100px overflow-y-auto md:col-start-1"
       />
+
       <Conta
+      className="hidden lg:block border rounded-lg w-64 fixed top-32 right-0 border-radius 100px overflow-y-auto"
        />
 
-      <div className="space-y-6 md:ml-40 p-2">
+      <div className="space-y-6 p-2">
         <div className="bg-[#b51890ff] p-4 rounded-2xl shadow">
           <h2 className="text-xl font-bold mb-3 text-white ">Criar post</h2>
 
