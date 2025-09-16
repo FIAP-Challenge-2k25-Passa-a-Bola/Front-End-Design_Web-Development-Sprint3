@@ -14,6 +14,8 @@ export default function Home() {
   const mudar = (i) => setIndice((i + imagens.length) % imagens.length);
 
   return (
+
+    
     <div className="min-h-screen bg-white text-black">
       {/* Carrossel */}
       <div className="relative w-full mx-auto h-[731px] overflow-hidden">
