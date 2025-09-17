@@ -21,6 +21,7 @@ export default function Explorar() {
 
   return (
     <div className="max-w-4xl mx-auto mt-10 p-6 mb-12">
+      
       {!selectedUser ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {fakeUsers.map((user) => (

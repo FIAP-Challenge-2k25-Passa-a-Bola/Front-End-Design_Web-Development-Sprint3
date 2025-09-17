@@ -15,7 +15,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* NAV */}
+      {/* Barra de navegação do Passa a Bola */}
       <nav className="bg-[#F24B99]">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-3 py-2 sm:px-4">
           {/* Logo */}
@@ -27,7 +27,7 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Botão hambúrguer (mobile) */}
+          {/* Botão hambúrguer (pra versão mobile) */}
           <button
             type="button"
             onClick={() => setOpen(v => !v)}

@@ -74,13 +74,13 @@ export default function Perfil() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Capa atrás (z-0) */}
+      {/* Capa atrás (z-0 pra ficar atrás do container do perfil e das informações do user) */}
       <div className="relative h-48 sm:h-56 bg-gradient-to-r from-[#F24B99] via-[#C71C8D] to-[#B70088] z-0" />
 
       {/* Cartão principal por cima (z-10) */}
       <div className="relative z-10 max-w-3xl mx-auto -mt-16 px-4 pb-16">
         <div className="bg-white rounded-2xl shadow-lg border border-black/10 p-6 sm:p-8">
-          {/* Avatar + Ações */}
+          {/* Foto do usuário com mais algumas caixas */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
             <div className="flex items-center gap-4">
               <div className="h-24 w-24 sm:h-28 sm:w-28 rounded-full bg-slate-100 overflow-hidden ring-4 ring-white shadow">
@@ -130,7 +130,7 @@ export default function Perfil() {
             </div>
           </div>
 
-          {/* Preferências */}
+          {/* Preferências do usuário*/}
           <div className="mt-10">
             <h2 className="text-xl font-bold text-pink-800">Preferências</h2>
 

@@ -5,7 +5,7 @@ export default function Footer() {
             
       <div className="max-w-screen-xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 ">
         
-        {/* Coluna 1 - Logo e descrição */}
+        {/*Logo e descrição */}
         <div>
           <a href="./home"><img
             src="/images/logo-sem-fundo.png"
@@ -18,7 +18,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Coluna 2 - Links principais */}
+        {/*Links principais */}
         <div>
           <h2 className="text-lg font-semibold mb-4">Navegação</h2>
           <ul className="space-y-2 text-sm">
@@ -30,7 +30,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Coluna 3 - Contato */}
+        {/*Contato */}
         <div>
           <h2 className="text-lg font-semibold mb-4 ">Contato</h2>
           <p className="text-sm text-white hover:text-pink-200 cursor-pointer">Email: contato@passaabola.com</p>

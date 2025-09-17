@@ -6,7 +6,6 @@ export default function Login() {
   const [email, setMail] = useState("");
   const [senha, setSenha] = useState("");
 
-  // Preview começa com a imagem padrão
   const [fotoPreview, setFotoPreview] = useState("/images/icone-usuario.png");
   const [fotoDataUrl, setFotoDataUrl] = useState(null);
 
@@ -27,7 +26,7 @@ export default function Login() {
     const userdata = { username, email, senha, loggedAt: new Date().toISOString() };
     localStorage.setItem("userdata", JSON.stringify(userdata));
 
-    // salva a foto que foi enviada ou a padrão
+    // salva a foto que foi enviada (ou a padrão do site)
     const fotoFinal = fotoDataUrl || "/images/icone-usuario.png";
     localStorage.setItem("foto", fotoFinal);
 
@@ -56,7 +55,7 @@ export default function Login() {
         </div>
       </section>
 
-      {/* Formulário */}
+      {/* Formulário pra inserir os dados do usuário*/}
       <section className="flex items-center justify-center bg-white">
         <div className="w-full max-w-md p-8">
           <div className="mb-8 text-center">
@@ -66,6 +65,7 @@ export default function Login() {
           </div>
 
           <div className="space-y-4 bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl p-6 shadow-sm">
+
             {/* Foto do perfil */}
             <div className="flex items-center gap-4">
               <div className="h-12 w-12 sm:h-14 sm:w-14 lg:h-16 lg:w-16 rounded-full bg-slate-100 overflow-hidden">
@@ -74,8 +74,7 @@ export default function Login() {
               <label
                 htmlFor="foto"
                 className="px-3 py-2 rounded-lg border border-gray-300 text-slate-700 cursor-pointer
-                           hover:bg-[#F24B99] hover:text-white hover:border-[#F24B99] transition-colors"
-              >
+                           hover:bg-[#F24B99] hover:text-white hover:border-[#F24B99] transition-colors">
                 Selecionar foto
               </label>
               <input id="foto" type="file" accept="image/*" className="hidden" onChange={onFotoChange} />
@@ -90,8 +89,7 @@ export default function Login() {
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Seu usuário"
                 className="mt-1 w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-slate-900
-                           focus:outline-none focus:ring-2 focus:ring-[#F24B99] focus:border-transparent"
-              />
+                           focus:outline-none focus:ring-2 focus:ring-[#F24B99] focus:border-transparent"/>
             </div>
 
             <div>
@@ -103,8 +101,7 @@ export default function Login() {
                 onChange={(e) => setMail(e.target.value)}
                 placeholder="seu@email.com"
                 className="mt-1 w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-slate-900
-                           focus:outline-none focus:ring-2 focus:ring-[#F24B99] focus:border-transparent"
-              />
+                           focus:outline-none focus:ring-2 focus:ring-[#F24B99] focus:border-transparent"/>
             </div>
 
             <div>
@@ -116,15 +113,13 @@ export default function Login() {
                 onChange={(e) => setSenha(e.target.value)}
                 placeholder="Sua senha"
                 className="mt-1 w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-slate-900
-                           focus:outline-none focus:ring-2 focus:ring-[#F24B99] focus:border-transparent"
-              />
+                           focus:outline-none focus:ring-2 focus:ring-[#F24B99] focus:border-transparent"/>
             </div>
 
             <button
               onClick={handleLogin}
               className="w-full rounded-xl bg-[#F24B99] px-4 py-2.5 text-white font-semibold shadow
-                         hover:bg-[#91305d] transition-colors focus:outline-none focus:ring-2 focus:ring-[#F24B99]"
-            >
+                         hover:bg-[#91305d] transition-colors focus:outline-none focus:ring-2 focus:ring-[#F24B99]">
               Entrar
             </button>
           </div>
