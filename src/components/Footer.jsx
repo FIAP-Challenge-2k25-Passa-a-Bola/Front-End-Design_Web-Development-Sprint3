@@ -1,7 +1,7 @@
 export default function Footer() {   
     return (
 
-        <footer className="bg-[#F24B99] text-white mt-10 bottom-0 w-full shadow-md">
+        <footer className="bg-[#F24B99] text-white bottom-0 w-full shadow-md">
             
       <div className="max-w-screen-xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 ">
         
@@ -23,8 +23,9 @@ export default function Footer() {
           <h2 className="text-lg font-semibold mb-4">Navegação</h2>
           <ul className="space-y-2 text-sm">
             <li><a href="./home" className="transition-colors duration-300 hover:text-pink-200">Home</a></li>
-            <li><a href="./explorar" className="transition-colors duration-300 hover:text-pink-200">Explorar</a></li>
+            <li><a href="./feed" className="transition-colors duration-300 hover:text-pink-200">Feed</a></li>
             <li><a href="./sobrenos" className="transition-colors duration-300 hover:text-pink-200">Sobre nós</a></li>
+            <li><a href="./explorar" className="transition-colors duration-300 hover:text-pink-200">Explorar</a></li>
             <li><a href="./perfil" className="transition-colors duration-300 hover:text-pink-200">Perfil</a></li>
           </ul>
         </div>

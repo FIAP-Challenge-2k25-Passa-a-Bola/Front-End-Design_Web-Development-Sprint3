@@ -5,6 +5,7 @@ import SobreNos from "../pages/sobrenos.jsx";
 import Explorar from "../pages/explorar.jsx";
 import Perfil from "../pages/perfil.jsx";
 import Home from "../pages/home.jsx";
+import Login from "../pages/login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: "sobrenos", element: <SobreNos /> },
       { path: "explorar", element: <Explorar /> },
       { path: "perfil", element: <Perfil /> },
+      { path: "login", element: <Login /> },
     ],
   },
 ]);
