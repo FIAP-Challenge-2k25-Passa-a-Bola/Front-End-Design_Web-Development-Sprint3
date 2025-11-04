@@ -1,7 +1,7 @@
 export default function Sidebarleft({ jogosPosts = [], className }) {
   return (
     <div className={`bg-[#e58fb7] text-white p-4  ${className}`}>
-            <h2 className="p-2 font-bold mb-4 ">🌍 Jogos passando por ai:</h2>
+            <h2 className="p-2 font-bold mb-4 text-pink-500 ">🌍 Jogos passando por ai:</h2>
 
             <main className=" p-2 rounded-lg mb-2">
                 {jogosPosts.length === 0 ? (
@@ -15,7 +15,7 @@ export default function Sidebarleft({ jogosPosts = [], className }) {
                 ))
                 )}
             </main>
-          <h1>☝️ Poste um jogo passando!</h1>
+          <h1 className="text-pink-900">☝️ Poste um jogo passando!</h1>
     </div>
   );
 }

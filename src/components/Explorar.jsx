@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 
 export default function Explorar() {
-  const [fakeUsers, setFakeUsers] = useState([]);
+  const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("https://68d33dafcc7017eec54652ba.mockapi.io/users")
       .then((res) => res.json())
-      .then((data) => setFakeUsers(data))
+      .then((data) => setUsers(data))
       .catch((err) => console.error("Erro ao buscar usuários:", err));
   }, []);
 
-  if (!fakeUsers.length) {
+  if (!users.length) {
     return (
       <p className="text-center mt-10 text-gray-500">
         Carregando usuários...
@@ -20,21 +20,29 @@ export default function Explorar() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto mt-10 p-6 mb-12">
-      
+    <div className="max-w-5xl mx-auto mt-10 p-6 mb-12">
       {!selectedUser ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {fakeUsers.map((user) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {users.map((user) => (
             <div
               key={user.id}
-              className="p-4 bg-pink-100 rounded shadow cursor-pointer hover:bg-pink-200"
+              className="p-4 bg-pink-100 rounded-2xl shadow hover:bg-pink-200 cursor-pointer transition"
               onClick={() => setSelectedUser(user)}
             >
-              <h3 className="font-bold text-lg">{user.name}</h3>
-              <p className="text-sm text-gray-700">{user.email}</p>
-              <p className="text-sm text-gray-700">Preferências: null</p>
-              <p className="text-sm text-gray-700">Time: null</p>
-                <p className="text-sm text-gray-700">Região: null</p>
+              <img
+                src={user.avatar}
+                alt={user.name}
+                className="w-20 h-20 rounded-full mx-auto mb-3 object-cover border-2 border-pink-300"
+              />
+              <h3 className="font-bold text-lg text-center">{user.name}</h3>
+              <p className="text-sm text-gray-700 text-center">@{user.username}</p>
+              <p className="text-sm text-gray-700 mt-2 text-center">{user.email}</p>
+
+              <div className="mt-3 text-sm text-gray-700">
+                <p><strong>Lado do campo:</strong> {user.preferencies || "Não informado"}</p>
+                <p><strong>Região:</strong> {user.regiao || "Não informado"}</p>
+                <p><strong>Time:</strong> {user.time || "Não informado"}</p>
+              </div>
 
               <a
                 href={`mailto:${user.email}?subject=${encodeURIComponent(
@@ -43,7 +51,7 @@ export default function Explorar() {
                   "Vi seu perfil no Explorar e queria conversar..."
                 )}`}
                 onClick={(e) => e.stopPropagation()}
-                className="inline-block mt-2 px-3 py-1 text-sm bg-pink-300 rounded hover:bg-pink-400"
+                className="block mt-3 text-center px-3 py-1 text-sm bg-pink-300 rounded hover:bg-pink-400"
               >
                 Enviar email
               </a>
@@ -51,26 +59,28 @@ export default function Explorar() {
           ))}
         </div>
       ) : (
-        <div className="p-6 bg-pink-100 rounded shadow">
+        <div className="p-6 bg-pink-100 rounded shadow text-center">
           <button
             onClick={() => setSelectedUser(null)}
             className="mb-4 text-sm px-3 py-1 bg-gray-200 rounded hover:bg-gray-300"
           >
             Voltar
           </button>
+
+          <img
+            src={selectedUser.avatar}
+            alt={selectedUser.name}
+            className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-2 border-pink-300"
+          />
           <h2 className="text-2xl font-bold mb-2">{selectedUser.name}</h2>
-          <p>
-            <span className="font-semibold">Email:</span>{" "}
-            {selectedUser.email}
-          </p>
-          <p>
-            <span className="font-semibold">Empresa:</span>{" "}
-            {selectedUser.company?.name}
-          </p>
-          <p>
-            <span className="font-semibold">Cidade:</span>{" "}
-            {selectedUser.address?.city}
-          </p>
+          <p className="text-gray-700">@{selectedUser.username}</p>
+
+          <div className="mt-4 text-left inline-block text-gray-700">
+            <p><strong>Email:</strong> {selectedUser.email}</p>
+            <p><strong>Lado do campo:</strong> {selectedUser.preferencies}</p>
+            <p><strong>Região:</strong> {selectedUser.regiao}</p>
+            <p><strong>Time:</strong> {selectedUser.time}</p>
+          </div>
 
           <a
             href={`mailto:${selectedUser.email}?subject=${encodeURIComponent(

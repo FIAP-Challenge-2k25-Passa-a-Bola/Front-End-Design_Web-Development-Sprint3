@@ -6,7 +6,6 @@ export default function Navbar() {
 
   return (
     <div className="sticky top-0 z-50">
-      {/* Faixa das logos */}
       <div className="w-full bg-white">
         <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-4 py-2 px-3 sm:py-3">
           <img src="/images/fiap-logo.png" alt="FIAP" className="h-8 sm:h-9 md:h-10 w-auto" />
@@ -15,10 +14,8 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Barra de navegação do Passa a Bola */}
       <nav className="bg-[#F24B99]">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-3 py-2 sm:px-4">
-          {/* Logo */}
           <Link to="/home" className="flex items-center gap-4">
             <img
               src="/images/logo-sem-fundo.png"
@@ -27,7 +24,6 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Botão hambúrguer (pra versão mobile) */}
           <button
             type="button"
             onClick={() => setOpen(v => !v)}
@@ -42,17 +38,16 @@ export default function Navbar() {
             </svg>
           </button>
 
-          {/* Links desktop */}
           <div className="hidden md:flex items-center gap-15">
             <Link to="/home" className="text-white font-inter text-lg transition-colors duration-300 hover:text-pink-200">Home</Link>
             <Link to="/feed" className="text-white font-inter text-lg transition-colors duration-300 hover:text-pink-200">Feed</Link>
             <Link to="/sobrenos" className="text-white font-inter text-lg transition-colors duration-300 hover:text-pink-200">Sobre nós</Link>
             <Link to="/explorar" className="text-white font-inter text-lg transition-colors duration-300 hover:text-pink-200">Explorar</Link>
             <Link to="/perfil" className="text-white font-inter text-lg transition-colors duration-300 hover:text-pink-200">Perfil</Link>
+            <Link to="/chat" className="text-white font-inter text-lg transition-colors duration-300 hover:text-pink-200">Chat</Link>
           </div>
         </div>
 
-        {/* Links mobile */}
         <div
           id="nav-links"
           className={`${open ? "max-h-96" : "max-h-0"} md:hidden overflow-hidden transition-[max-height] duration-300 ease-out border-t border-white/20`}

@@ -6,6 +6,7 @@ import Explorar from "../pages/explorar.jsx";
 import Perfil from "../pages/perfil.jsx";
 import Home from "../pages/home.jsx";
 import Login from "../pages/login.jsx";
+import Chat from "../pages/chat.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: "explorar", element: <Explorar /> },
       { path: "perfil", element: <Perfil /> },
       { path: "login", element: <Login /> },
+      { path: "chat", element: <Chat /> },
     ],
   },
 ]);
