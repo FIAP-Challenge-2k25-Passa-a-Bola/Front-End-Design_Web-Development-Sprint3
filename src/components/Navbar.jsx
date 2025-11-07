@@ -58,6 +58,7 @@ export default function Navbar() {
             <li><Link onClick={() => setOpen(false)} to="/sobrenos" className="block text-white/90 hover:text-white transition-colors">Sobre nós</Link></li>
             <li><Link onClick={() => setOpen(false)} to="/explorar" className="block text-white/90 hover:text-white transition-colors">Explorar</Link></li>
             <li><Link onClick={() => setOpen(false)} to="/perfil" className="block text-white/90 hover:text-white transition-colors">Perfil</Link></li>
+            <li><Link onClick={() => setOpen(false)} to="/chat" className= "block text-white/90 hover:text-white transition-colors">Chat</Link></li>
           </ul>
         </div>
       </nav>
