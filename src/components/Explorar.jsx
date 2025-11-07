@@ -15,7 +15,7 @@ export default function Explorar() {
   if (!users.length) {
     return (
       <p className="text-center mt-10 text-gray-500">
-        Carregando usuários...
+        Carregando usuários..
       </p>
     );
   }
